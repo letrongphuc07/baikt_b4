@@ -1,0 +1,55 @@
+package B1;
+
+public class GiaoDich {
+    private String maGiaoDich,NgayNhapXuat;
+    private int donGia;
+    private double dienTich;
+
+    public GiaoDich(String maGiaoDich, String NgayNhapXuat, int donGia, double dienTich) {
+        this.maGiaoDich = maGiaoDich;
+        this.NgayNhapXuat = NgayNhapXuat;
+        this.donGia = donGia;
+        this.dienTich = dienTich;
+    }
+
+    public String getMaGiaoDich() {
+        return maGiaoDich;
+    }
+
+    public void setMaGiaoDich(String maGiaoDich) {
+        this.maGiaoDich = maGiaoDich;
+    }
+
+    public String getNgayNhapXuat() {
+        return NgayNhapXuat;
+    }
+
+    public void setNgayNhapXuat(String NgayNhapXuat) {
+        this.NgayNhapXuat = NgayNhapXuat;
+    }
+
+    public int getDonGia() {
+        return donGia;
+    }
+
+    public void setDonGia(int donGia) {
+        this.donGia = donGia;
+    }
+
+    public double getDienTich() {
+        return dienTich;
+    }
+
+    public void setDienTich(double dienTich) {
+        this.dienTich = dienTich;
+    }
+
+    @Override
+    public String toString() {
+        return "GiaoDich{" + "maGiaoDich=" + maGiaoDich + ", NgayNhapXuat=" + NgayNhapXuat + ", donGia=" + donGia + ", dienTich=" + dienTich + '}';
+    }
+
+
+
+ 
+}
