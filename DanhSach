@@ -1,0 +1,59 @@
+package B1;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class DanhSach {
+    ArrayList<GiaoDich> gdn = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
+    public void them_may_tinh(GiaoDich gd) {
+        gdn.add(gd);
+    }
+
+    public void in_thong_tin() {
+        for (GiaoDich giaoDich : gdn) {
+            System.out.println(giaoDich);
+        }
+    }
+    public void in_GiaoDichDat() {
+        for (GiaoDich giaoDich : gdn) {
+            if (giaoDich instanceof GiaoDichDat) {
+                System.out.println(giaoDich.toString());
+            }
+        }
+    }
+
+    public void in_GiaoDichNha() {
+        for (GiaoDich giaoDich : gdn) {
+            if (giaoDich instanceof GiaoDichNha) {
+                System.out.println(giaoDich.toString());
+            }
+        }
+    }
+    public void tiengiaodichdat(){
+        int giaodichdat=0;
+        double tongtien =0;
+        for (GiaoDich giaoDich : gdn) {
+            if(giaoDich instanceof GiaoDichDat){
+                giaodichdat++;
+                tongtien+=giaoDich.getDonGia()*giaoDich.getDienTich();
+            }
+        }
+        if(giaodichdat>0){
+            double trungbinh=tongtien/giaodichdat;
+            System.out.println("trung binh tien giao dich dat" + trungbinh);
+        }else{
+            System.out.println("khong co");
+        }
+    }
+    public void xuatgiaodich(LocalDate ngayGiaoDich){
+        System.out.println("Cac giao dich sau " + ngayGiaoDich +":");
+        
+        for (GiaoDich s : gdn) {
+            if(s.getNgayNhapXuat().isEmpty()){
+                System.out.println(s);
+            }
+        }
+    }
+}
