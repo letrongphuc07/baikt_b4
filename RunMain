@@ -1,0 +1,118 @@
+package B1;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class RunMain {
+
+    public static void main(String[] args) {
+        DanhSach ds = new DanhSach();
+        Scanner sc = new Scanner(System.in);
+        int menu;
+        do {
+            System.out.println("Menu lua chon chuc nang---------------------------");
+            System.out.println("1.  Them thong tin giao dich");
+            System.out.println("2.  In thong tin toan bo may tinh co trong kho");
+            System.out.println("3.  Chi in thong tin Giao Dich Dat");
+            System.out.println("4.  Chi in thong tin Giao Dich Nha");
+            System.out.println("5.  trung binh thanh tien giao dich");
+            System.out.println("6.  Kiem tra so luong may trong kho");
+            System.out.println("0.  Thoat chuong trinh-Xin cam on");
+            System.out.print("Nhap: ");
+            menu = sc.nextInt();
+
+            switch (menu) {
+                case 1:
+                    int menu_1;
+                    do {
+
+                        System.out.println("Menu----------");
+                        System.out.println("1. Giao Dich Dat");
+                        System.out.println("2. Giao Dich Nha");
+                        System.out.println("0. Quay lai chuong trinh");
+                        System.out.print("Nhap: ");
+                        menu_1 = sc.nextInt();
+
+                        switch (menu_1) {
+                            case 1: {
+                                sc.nextLine();
+                                System.out.print("Ma Giao Dich: ");
+                                String maGiaoDich = sc.nextLine();
+
+                                System.out.println("Nhap vao dd/mm/yyyy");
+                                String NgayNhapXuat = sc.nextLine();
+
+                                System.out.print("Nhap don gia: ");
+                                int donGia = sc.nextInt();
+
+                                sc.nextLine();
+                                System.out.print("Nhap loai dat(A/B/C): ");
+                                String loaiDat = sc.nextLine();
+
+                                System.out.print("Nhap dien tich: ");
+                                String dienTich = sc.nextLine();
+
+                                GiaoDich gdn = new GiaoDichDat(loaiDat, maGiaoDich, NgayNhapXuat, donGia, donGia);
+                                ds.them_may_tinh(gdn);
+                                System.out.println("Them thanh cong-----------");
+                            }
+                            break;
+                            case 2: {
+                                sc.nextLine();
+                                System.out.print("Ma Giao Dich: ");
+                                String maGiaoDich = sc.nextLine();
+
+                                System.out.println("Nhap vao dd/mm/yyyy");
+                                String NgayNhapXuat = sc.nextLine();
+
+                                System.out.print("Nhap don gia: ");
+                                int donGia = sc.nextInt();
+
+                                System.out.print("Nhap loai nha(cao cap/ thuong): ");
+                                String loaiDat = sc.nextLine();
+
+                                sc.nextLine();
+                                System.out.print("Nhap dia chi: ");
+                                String diaChi = sc.nextLine();
+
+                                System.out.print("Nhap dien tich: ");
+                                String dienTich = sc.nextLine();
+
+                                GiaoDich gdn = new GiaoDichNha(loaiDat, diaChi, maGiaoDich, NgayNhapXuat, donGia, donGia);
+                                ds.them_may_tinh(gdn);
+                                System.out.println("Them thanh cong-----------");
+                            }
+                            break;
+                            default:
+                                if (menu_1 == 0) {
+                                    System.out.println("Thoat chuong trinh");
+                                } else {
+                                    System.out.println("Vui long nhap lai lua chon");
+                                }
+                        }
+                    } while (menu_1 != 0);
+                    break;
+                case 2:
+                    ds.in_thong_tin();
+                    System.out.println("\n");
+                    break;
+                case 3:
+                    ds.in_GiaoDichDat();
+                    System.out.println("\n");
+                    break;
+                case 4:
+                    ds.in_GiaoDichNha();
+                    System.out.println("\n");
+                    break;
+                case 5:
+                    ds.tiengiaodichdat();
+                    System.out.println("\n");
+                    break;
+                case 6:
+                    break;
+                default:
+            }
+           
+        } while (menu != 0);
+    }
+}
