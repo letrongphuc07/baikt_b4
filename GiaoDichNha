@@ -1,0 +1,32 @@
+package B1;
+public class GiaoDichNha extends GiaoDich{
+   private String loaiNha,diaChi;
+
+    public GiaoDichNha(String loaiNha, String diaChi, String maGiaoDich, String NgayNhapXuat, int donGia, double dienTich) {
+        super(maGiaoDich, NgayNhapXuat, donGia, dienTich);
+        this.loaiNha = loaiNha;
+        this.diaChi = diaChi;
+    }
+
+    public String getLoaiNha() {
+        return loaiNha;
+    }
+
+    public void setLoaiNha(String loaiNha) {
+        this.loaiNha = loaiNha;
+    }
+
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
+
+    @Override
+    public String toString() {
+        return "GiaoDichNha{"+ super.toString()+ "loaiNha=" + loaiNha + ", diaChi=" + diaChi + '}';
+    }
+
+}
